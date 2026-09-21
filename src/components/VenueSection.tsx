@@ -12,11 +12,11 @@ export function VenueSection({ t, language }: { t: WeddingCopy; language: Langua
     <section className="venue-section section-pad" id="venue">
       <p className="eyebrow">{t.venueEyebrow}</p>
       <h2>{t.venueTitle}</h2>
-      <div className="venue-map" aria-hidden="true">
-        <div className="map-track map-track-one" /><div className="map-track map-track-two" /><div className="map-track map-track-three" />
-        <div className="map-ring"><div><span>✳</span></div></div>
-        <span className="map-coord">37° N / 126° E</span>
-        <span className="map-word">THE PLACE<br />WE SAY YES</span>
+      <div className="venue-art" aria-hidden="true">
+        <span className="venue-art-top">ONE DAY <i /> ONE PLACE</span>
+        <span className="venue-art-initials">D <em>&amp;</em> T</span>
+        <span className="venue-art-rule" />
+        <span className="venue-art-bottom">THE CELEBRATION · {getDateDisplay(language).year}</span>
       </div>
       <div className="venue-details">
         <span className="venue-small">LOCATION</span>
@@ -27,12 +27,11 @@ export function VenueSection({ t, language }: { t: WeddingCopy; language: Langua
         <p className="venue-datetime">{getDateDisplay(language).full}</p>
       </div>
       <p className="venue-note">{t.venueNote}</p>
-      <div className="map-links">
-        {links.map(({ label, url }) => url ? (
+      {links.some(({ url }) => url) ? <div className="map-links">
+        {links.filter(({ url }) => url).map(({ label, url }) => (
           <a key={label} href={url} target="_blank" rel="noopener noreferrer">{label}<span aria-hidden="true">↗</span></a>
-        ) : <span className="map-link-disabled" key={label}>{label}<span aria-hidden="true">↗</span></span>)}
-      </div>
-      {links.every(({ url }) => !url) && <p className="map-pending">{t.mapNote}</p>}
+        ))}
+      </div> : <p className="map-pending">{t.mapNote}</p>}
     </section>
   );
 }

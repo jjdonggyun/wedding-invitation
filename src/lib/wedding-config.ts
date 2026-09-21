@@ -6,7 +6,7 @@ export const weddingConfig = {
   venue: {
     ko: "스탠포드호텔 코리아",
     ja: "スタンフォードホテルコリア",
-    addressKo: "정확한 주소를 입력해 주세요",
+    addressKo: "상세 주소는 추후 안내드리겠습니다",
     addressJa: "詳しい住所は後日ご案内いたします",
   },
   mapLinks: {

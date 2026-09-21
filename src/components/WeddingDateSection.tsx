@@ -24,7 +24,7 @@ export function WeddingDateSection({ t, language }: { t: WeddingCopy; language: 
         <div className="date-side"><span>{date.monthEnglish}</span><i /><span>{date.year}</span></div>
       </div>
       <p className="date-weekday">{date.weekday.toUpperCase()} <span>·</span> {date.time}</p>
-      <div className="date-divider"><span aria-hidden="true">✳</span></div>
+      <div className="date-divider"><span aria-hidden="true">◇</span></div>
       <p className="date-venue">{weddingConfig.venue[language]}</p>
       <p className="date-count" aria-live="polite">
         {days === null ? "\u00a0" : days === 0 ? t.weddingDay : `${days > 0 ? t.countBefore : t.countAfter} ${Math.abs(days)}`}

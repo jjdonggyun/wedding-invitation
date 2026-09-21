@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { WeddingPhoto } from "@/lib/image-config";
-import { galleryMinimumTiles } from "@/lib/image-config";
+import { featuredGalleryNumbers, galleryMinimumTiles } from "@/lib/image-config";
 import type { WeddingCopy } from "@/lib/content";
 import { PhotoFrame } from "./PhotoFrame";
 
@@ -22,7 +22,7 @@ export function GallerySection({ photos, t }: { photos: WeddingPhoto[]; t: Weddi
     return () => { document.body.style.overflow = previousOverflow; window.removeEventListener("keydown", onKey); };
   }, [active, photos.length]);
 
-  const count = Math.max(galleryMinimumTiles, photos.length);
+  const count = photos.length || galleryMinimumTiles;
   const slots = Array.from({ length: count }, (_, index) => photos[index]);
 
   return (
@@ -34,10 +34,10 @@ export function GallerySection({ photos, t }: { photos: WeddingPhoto[]; t: Weddi
         {slots.map((photo, index) => {
           const label = `${t.photo} ${String(index + 1).padStart(2, "0")}`;
           const landscape = !!photo && photo.width / photo.height > 1.18;
-          const featured = landscape || index % 6 === 2;
+          const featured = landscape || featuredGalleryNumbers.includes(photo.number);
           return photo ? (
-            <button type="button" className={`gallery-tile gallery-tile-${index % 6}${landscape ? " gallery-tile-wide" : ""}`} key={photo.src} aria-label={`${label} ${t.enlarge}`} onClick={() => setActive(index)}>
-              <PhotoFrame photo={photo} alt={label} sizes={featured ? "(max-width: 480px) 90vw, 430px" : "(max-width: 480px) 45vw, 220px"} ratio={landscape ? Math.min(photo.width / photo.height, 1.85) : undefined} />
+            <button type="button" className={`gallery-tile gallery-tile-${index % 6}${featured ? " gallery-tile-wide" : ""}`} key={photo.src} aria-label={`${label} ${t.enlarge}`} onClick={() => setActive(index)}>
+              <PhotoFrame photo={photo} alt={label} sizes={featured ? "(max-width: 480px) 92vw, 440px" : "(max-width: 480px) 45vw, 220px"} ratio={featured ? photo.width / photo.height : undefined} />
               <span className="gallery-tile-number">{String(index + 1).padStart(2, "0")}</span>
             </button>
           ) : (
@@ -48,7 +48,7 @@ export function GallerySection({ photos, t }: { photos: WeddingPhoto[]; t: Weddi
           );
         })}
       </div>
-      <p className="gallery-endmark" aria-hidden="true">✳</p>
+      <p className="gallery-endmark" aria-hidden="true">D <em>&amp;</em> T</p>
       {active !== null && photos[active] && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="Wedding gallery" onClick={() => setActive(null)}>
           <button type="button" className="lightbox-close" aria-label={t.close} onClick={() => setActive(null)}>×</button>

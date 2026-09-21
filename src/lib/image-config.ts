@@ -7,7 +7,19 @@ export const customImageOrder: number[] = [];
 
 /** 표지 다음 네 장은 스토리에, 마지막 한 장은 엔딩에 사용합니다. */
 export const storyPhotoCount = 4;
-export const galleryMinimumTiles = 10;
+/** 사진이 아직 없을 때만 보여 줄 샘플 지면 수입니다. */
+export const galleryMinimumTiles = 4;
+
+/** 갤러리에서 한 장을 크게 보여 줄 사진 번호입니다. 원하는 번호를 추가하거나 빼세요. */
+export const featuredGalleryNumbers = [8, 9, 11, 12];
+
+/** 카카오톡과 링크 미리보기에 사용할 사진 번호입니다. 표지와 별도로 선택할 수 있습니다. */
+export const shareImageNumber = 5;
+
+export function getSharePhoto(): WeddingPhoto | undefined {
+  const photos = [...discoveredImages] as WeddingPhoto[];
+  return photos.find((photo) => photo.number === shareImageNumber) ?? photos[0];
+}
 
 export function getImagePlan() {
   const all = [...discoveredImages] as WeddingPhoto[];

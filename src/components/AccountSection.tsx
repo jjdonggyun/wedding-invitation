@@ -10,11 +10,12 @@ export function AccountSection({ t }: { t: WeddingCopy }) {
   const sides = [
     { key: "groom" as const, label: t.groomSide, account: weddingConfig.accounts.groom },
     { key: "bride" as const, label: t.brideSide, account: weddingConfig.accounts.bride },
-  ];
+  ].filter(({ account }) => account.number && account.bank && account.holder);
   async function copyAccount(number: string) {
     try { await navigator.clipboard.writeText(number); setCopied(number); window.setTimeout(() => setCopied(null), 2500); }
     catch { setCopied(null); }
   }
+  if (!sides.length) return null;
   return (
     <section className="account-section section-pad" id="account">
       <p className="eyebrow">{t.accountEyebrow}</p>
@@ -25,7 +26,7 @@ export function AccountSection({ t }: { t: WeddingCopy }) {
           const expanded = open === key;
           return <div className="account-item" key={key}>
             <button type="button" aria-expanded={expanded} onClick={() => setOpen(expanded ? null : key)}><span>{label}</span><span className={`account-plus ${expanded ? "rotated" : ""}`}>+</span></button>
-            {expanded && <div className="account-content">{account.number && account.bank && account.holder ? <><p>{account.bank} · {account.holder}</p><strong>{account.number}</strong><button type="button" className="text-action" onClick={() => copyAccount(account.number)}>{copied === account.number ? t.copied : t.copyAccount} ↗</button></> : <p>{t.accountPending}</p>}</div>}
+            {expanded && <div className="account-content"><p>{account.bank} · {account.holder}</p><strong>{account.number}</strong><button type="button" className="text-action" onClick={() => copyAccount(account.number)}>{copied === account.number ? t.copied : t.copyAccount} ↗</button></div>}
           </div>;
         })}
       </div>

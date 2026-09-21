@@ -27,7 +27,7 @@ export function WeddingBook({ images }: { images: { hero?: WeddingPhoto; story: 
   const t = content[language];
   return (
     <main className={`wedding-book language-${language}`}>
-      {process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY && <Script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.9/kakao.min.js" strategy="afterInteractive" />}
+      {process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY && <Script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.1/kakao.min.js" strategy="afterInteractive" />}
       <ScrollMotion />
       <MusicControl t={t} />
       <HeroSection photo={images.hero} t={t} language={language} onLanguageChange={changeLanguage} />
@@ -40,7 +40,7 @@ export function WeddingBook({ images }: { images: { hero?: WeddingPhoto; story: 
       <VenueSection t={t} language={language} />
       <ContactSection t={t} language={language} />
       <AccountSection t={t} />
-      <ShareSection t={t} language={language} heroImage={images.hero?.src} />
+      <ShareSection t={t} language={language} />
       <EndingSection t={t} language={language} photo={images.ending} />
     </main>
   );
