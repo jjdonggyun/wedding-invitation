@@ -37,7 +37,7 @@ export function ShareSection({ t, language }: { t: WeddingCopy; language: Langua
           },
           buttons: [
             { title: language === "ko" ? "모바일 청첩장" : "招待状を見る", link: { mobileWebUrl: url, webUrl: url } },
-            { title: language === "ko" ? "오시는 길" : "会場を見る", link: { mobileWebUrl: `${url}#venue`, webUrl: `${url}#venue` } },
+            { title: language === "ko" ? "위치 보기" : "会場を見る", link: { mobileWebUrl: `${url}#venue`, webUrl: `${url}#venue` } },
           ],
         });
         return;
