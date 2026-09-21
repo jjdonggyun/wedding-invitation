@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title,
   description,
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
-  openGraph: { type: "website", locale: "ko_KR", title, description, url: siteUrl, siteName: "Dongkyun & Tsukina" },
+  openGraph: { type: "website", locale: "ko_KR", title, description, url: siteUrl, siteName: "Dong Gyun & Tsukina" },
   twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
 };
 

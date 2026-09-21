@@ -40,7 +40,7 @@ export function CinematicPhotos({ t, landscape, closeup }: { t: WeddingCopy; lan
         <p className="film-stage-overline">CHAPTER II <span>—</span> THE PROMISE</p>
         <PhotoFrame photo={landscape} alt="베일 아래 마주 선 두 사람" className="cinematic-landscape" placeholderLabel="PHOTO 04" />
         <div className="cinematic-caption"><span>IV</span><span>{t.together}</span></div>
-        <p className="film-stage-under" aria-hidden="true">D &amp; T <span>·</span> FOREVER</p>
+        <p className="film-stage-under" aria-hidden="true">ONE LIFE <span>·</span> ONE LOVE</p>
       </div>
       <div className="closeup-wrap"><PhotoFrame photo={closeup} alt="꽃다발을 든 두 사람의 다정한 순간" className="cinematic-closeup" placeholderLabel="PHOTO 05" /></div>
       <p className="cinematic-script">a lifetime of little moments</p>

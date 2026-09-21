@@ -93,4 +93,4 @@
 
 페이지는 빌드 때 정적으로 생성되며, `next/image`가 화면 크기에 맞춘 이미지를 제공합니다. 첫 사진은 우선 로딩되고 아래 사진은 필요할 때 로딩됩니다. 검색엔진 노출을 막기 위해 `noindex`, `nofollow` 메타 태그와 HTTP 헤더를 설정했습니다. `robots.txt`는 검색엔진이 이 지시를 읽을 수 있도록 접근을 허용합니다. 링크를 아는 사람은 방문할 수 있으므로 URL 자체를 비밀번호처럼 다루지는 마세요.
 
-장소 영역의 지도는 Vercel에 설정된 `NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY`로 Kakao 지도 SDK를 불러오고, `venue.addressKo`의 주소를 검색해 마커를 표시합니다. 도메인을 변경할 때는 Kakao Developers 앱의 JavaScript SDK 도메인에도 새 도메인을 추가해야 지도가 표시됩니다.
+장소 영역에는 별도 API 키나 과금 없이 OpenStreetMap 지도를 표시하고 호텔 위치에 마커를 보여줍니다. 지도 위치를 바꾸려면 `src/lib/wedding-config.ts`의 `venue.location.latitude`와 `venue.location.longitude`를 수정하세요. 지도 아래의 카카오맵·네이버지도 버튼 주소는 같은 파일의 `mapLinks`에서 관리합니다.

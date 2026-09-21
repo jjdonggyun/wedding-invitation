@@ -8,6 +8,7 @@ export const weddingConfig = {
     ja: "スタンフォードホテルコリア",
     addressKo: "서울 마포구 월드컵북로58길 15",
     addressJa: "ソウル特別市 麻浦区 ワールドカップ北路58ギル 15",
+    location: { latitude: 37.5823258, longitude: 126.8867101 },
   },
   mapLinks: {
     kakao: "https://map.kakao.com/link/search/%EC%8A%A4%ED%83%A0%ED%8F%AC%EB%93%9C%ED%98%B8%ED%85%94%20%EC%BD%94%EB%A6%AC%EC%95%84",
