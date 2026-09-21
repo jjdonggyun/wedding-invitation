@@ -10,8 +10,8 @@ export const weddingConfig = {
     addressJa: "ソウル特別市 麻浦区 ワールドカップ北路58ギル 15",
   },
   mapLinks: {
-    kakao: "",
-    naver: "",
+    kakao: "https://map.kakao.com/link/search/%EC%8A%A4%ED%83%A0%ED%8F%AC%EB%93%9C%ED%98%B8%ED%85%94%20%EC%BD%94%EB%A6%AC%EC%95%84",
+    naver: "https://map.naver.com/p/search/%EC%8A%A4%ED%83%A0%ED%8F%AC%EB%93%9C%ED%98%B8%ED%85%94%20%EC%BD%94%EB%A6%AC%EC%95%84",
     tmap: "",
   },
   contacts: {

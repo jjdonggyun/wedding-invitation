@@ -9,7 +9,7 @@ export function IntroSection({ t, photo }: { t: WeddingCopy; photo?: WeddingPhot
       <div className="section-kicker"><span className="tiny-diamond" />{t.ourWedding}<span className="tiny-diamond" /></div>
       <h2 className="intro-title preline">{t.introTitle}</h2>
       <p className="intro-body preline">{t.introBody}</p>
-      <div className="intro-ornament" aria-hidden="true"><span />D <em>&amp;</em> T<span /></div>
+      <div className="intro-ornament" aria-hidden="true"><span />FOREVER<span /></div>
       <div className="editorial-photo-wrap">
         <PhotoFrame photo={photo} alt="커튼 사이에서 서로를 바라보는 두 사람" className="editorial-photo" placeholderLabel="PHOTO 02" />
         <span className="editorial-index">01 / THE BEGINNING</span>
@@ -55,7 +55,7 @@ export function InvitationSection({ t }: { t: WeddingCopy }) {
       <p className="eyebrow">{t.invitationEyebrow}</p>
       <h2>{t.invitationTitle}</h2>
       <p className="preline">{t.invitationBody}</p>
-      <span className="invitation-seal" aria-hidden="true">D <em>&amp;</em> T</span>
+      <span className="invitation-seal" aria-hidden="true">WITH LOVE</span>
     </section>
   );
 }

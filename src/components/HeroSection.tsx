@@ -11,7 +11,7 @@ export function HeroSection({ photo, t, language, onLanguageChange }: { photo?: 
       <PhotoFrame photo={photo} alt={`${weddingConfig.groom.ko}과 ${weddingConfig.bride.ko}의 웨딩 사진`} className="hero-photo" sizes="(max-width: 480px) 650px, 750px" priority position="center 64%" placeholderLabel="OUR WEDDING DAY" />
       <div className="hero-wash" />
       <div className="hero-film-grain" aria-hidden="true" />
-      <div className="hero-topline"><span className="hero-monogram">D<span aria-hidden="true">·</span>T</span><LanguageToggle language={language} onChange={onLanguageChange} /></div>
+      <div className="hero-topline"><span className="hero-datestamp">06 · 12 · 2026</span><LanguageToggle language={language} onChange={onLanguageChange} /></div>
       <div className="hero-title-block">
         <div className="hero-eyebrow">{t.coverKicker}</div>
         <p className="hero-script">{t.coverScript}</p>

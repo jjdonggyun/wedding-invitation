@@ -145,4 +145,20 @@ body{background:#e8ddda}
 .ending-names em,.ending-date{color:#d8afb1}
 @media(max-width:380px){.hero-script{font-size:20vw}.hero-credits h1{font-size:7.7vw;gap:6px}.hero-credits h1 em{font-size:24px}.hero-credits{bottom:84px}.gallery-section h2{font-size:70px}}
 @media(min-width:481px){body{padding:35px 0}.hero{height:810px}.hero-script{font-size:105px}}
+
+/* Live venue map and compact controls */
+.hero-datestamp{font:500 11px/1 var(--font-serif),Georgia,serif;letter-spacing:.2em;padding-top:5px}
+.venue-map-shell{height:300px;position:relative;overflow:hidden;border:1px solid #e4ceca;background:#eadbd7;text-align:left}
+.venue-map-canvas{position:absolute;inset:0;width:100%;height:100%}
+.venue-map-canvas:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.55)}
+.venue-map-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;background:linear-gradient(135deg,#ead6d2,#f7ebe6);color:#735d5d;text-align:center;padding:30px}
+.venue-map-fallback span{font:600 11px var(--font-serif),Georgia,serif;letter-spacing:.3em;color:#a4777f}
+.venue-map-fallback strong{font-size:18px;font-weight:400}
+.venue-map-fallback small{font-size:11px;color:#8f7a76}
+.venue-map-open{position:absolute;z-index:2;right:12px;bottom:12px;padding:10px 12px;background:rgba(255,252,249,.94);box-shadow:0 4px 18px rgba(65,43,42,.14);color:#5f4e4f;text-decoration:none;font-size:11px;backdrop-filter:blur(10px)}
+.venue-map-open span{color:var(--rose-dark);padding-left:8px}
+.music-button{width:46px;height:46px;min-height:46px;padding:0;border-radius:50%;justify-content:center;gap:0}
+.music-button-icon{width:30px;height:30px;border:0}
+.music-button-text{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.music-error{bottom:54px}
 @media(prefers-reduced-motion:reduce){.hero-photo img,.hero-script{animation:none!important}.hero-photo img{transform:translateY(-8%) scale(1.3)}}

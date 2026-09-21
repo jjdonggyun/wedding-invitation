@@ -36,7 +36,7 @@ export default async function OpenGraphImage() {
       </div>
       <div style={{ display: "flex", width: 490, height: 630, flexDirection: "column", padding: "50px 51px 42px", justifyContent: "space-between" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 15, letterSpacing: 5, color: "#987875" }}>
-          <span>THE WEDDING OF</span><span>D · T</span>
+          <span>THE WEDDING OF</span><span>06 · 12 · 2026</span>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontFamily: "Pinyon", fontSize: 86, lineHeight: 1.05, color: "#a77b83", marginLeft: -5 }}>Our forever</div>

@@ -46,7 +46,7 @@ export function GallerySection({ photos, t }: { photos: WeddingPhoto[]; t: Weddi
           );
         })}
       </div>
-      <p className="gallery-endmark" aria-hidden="true">D <em>&amp;</em> T</p>
+      <p className="gallery-endmark" aria-hidden="true">OUR STORY</p>
       {active !== null && photos[active] && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="Wedding gallery" onClick={() => setActive(null)}>
           <button type="button" className="lightbox-close" aria-label={t.close} onClick={() => setActive(null)}>×</button>
