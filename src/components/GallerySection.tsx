@@ -32,18 +32,16 @@ export function GallerySection({ photos, t }: { photos: WeddingPhoto[]; t: Weddi
       <p className="gallery-description">{t.galleryDesc}</p>
       <div className="gallery-grid">
         {slots.map((photo, index) => {
-          const label = `${t.photo} ${String(index + 1).padStart(2, "0")}`;
+          const label = t.photo;
           const landscape = !!photo && photo.width / photo.height > 1.18;
-          const featured = landscape || featuredGalleryNumbers.includes(photo.number);
+          const featured = !!photo && (landscape || featuredGalleryNumbers.includes(photo.number));
           return photo ? (
             <button type="button" className={`gallery-tile gallery-tile-${index % 6}${featured ? " gallery-tile-wide" : ""}`} key={photo.src} aria-label={`${label} ${t.enlarge}`} onClick={() => setActive(index)}>
               <PhotoFrame photo={photo} alt={label} sizes={featured ? "(max-width: 480px) 92vw, 440px" : "(max-width: 480px) 45vw, 220px"} ratio={featured ? photo.width / photo.height : undefined} />
-              <span className="gallery-tile-number">{String(index + 1).padStart(2, "0")}</span>
             </button>
           ) : (
             <div className={`gallery-tile gallery-tile-${index % 6}`} key={`placeholder-${index}`}>
-              <PhotoFrame alt={label} placeholderLabel={label} />
-              <span className="gallery-tile-number">{String(index + 1).padStart(2, "0")}</span>
+              <PhotoFrame alt={label} placeholderLabel={t.photo} />
             </div>
           );
         })}
@@ -53,11 +51,10 @@ export function GallerySection({ photos, t }: { photos: WeddingPhoto[]; t: Weddi
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="Wedding gallery" onClick={() => setActive(null)}>
           <button type="button" className="lightbox-close" aria-label={t.close} onClick={() => setActive(null)}>×</button>
           <div className="lightbox-image" onClick={(event) => event.stopPropagation()}>
-            <Image src={photos[active].src} alt={`${t.photo} ${active + 1}`} fill sizes="100vw" style={{ objectFit: "contain" }} quality={90} />
+            <Image src={photos[active].src} alt={t.photo} fill sizes="100vw" style={{ objectFit: "contain" }} quality={90} />
           </div>
           <div className="lightbox-controls" onClick={(event) => event.stopPropagation()}>
             <button type="button" aria-label={t.previous} onClick={() => setActive((active - 1 + photos.length) % photos.length)}>←</button>
-            <span>{String(active + 1).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}</span>
             <button type="button" aria-label={t.next} onClick={() => setActive((active + 1) % photos.length)}>→</button>
           </div>
         </div>

@@ -55,7 +55,7 @@
 
 `src/lib/wedding-config.ts`에 다음 값을 입력하면 관련 기능이 활성화됩니다.
 
-- `venue.addressKo`, `venue.addressJa`: 정확한 주소와 일본어 안내를 입력합니다. 현재는 주소가 미정이라는 안내가 표시됩니다.
+- `venue.addressKo`, `venue.addressJa`: 정확한 주소와 일본어 안내를 입력합니다. 현재 스탠포드호텔 코리아 주소가 한국어와 일본어로 입력되어 있습니다.
 - `mapLinks.kakao`, `mapLinks.naver`, `mapLinks.tmap`: 확인한 지도 공유 URL을 입력합니다. URL이 없으면 지도 버튼은 보이지 않습니다.
 - `contacts`: 실제 전화번호를 입력합니다. 번호가 하나라도 입력되면 연락처 영역과 해당 통화 링크가 나타납니다.
 - `accounts.groom`, `accounts.bride`: 은행명 `bank`, 계좌번호 `number`, 예금주 `holder`를 모두 입력하면 마음 전하실 곳의 펼침 영역과 복사 버튼이 나타납니다. 비어 있는 동안에는 이 영역을 숨깁니다.
