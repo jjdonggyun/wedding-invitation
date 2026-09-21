@@ -55,20 +55,22 @@
 
 `src/lib/wedding-config.ts`에 다음 값을 입력하면 관련 기능이 활성화됩니다.
 
-- `venue.addressKo`, `venue.addressJa`: 정확한 주소와 일본어 안내를 입력합니다. 현재 지도 그림은 장식용이며 실제 지도가 아닙니다.
+- `venue.addressKo`, `venue.addressJa`: 정확한 주소와 일본어 안내를 입력합니다. 현재는 주소가 미정이라는 안내가 표시됩니다.
 - `mapLinks.kakao`, `mapLinks.naver`, `mapLinks.tmap`: 확인한 지도 공유 URL을 입력합니다. URL이 없으면 지도 버튼은 보이지 않습니다.
 - `contacts`: 실제 전화번호를 입력합니다. 번호가 하나라도 입력되면 연락처 영역과 해당 통화 링크가 나타납니다.
 - `accounts.groom`, `accounts.bride`: 은행명 `bank`, 계좌번호 `number`, 예금주 `holder`를 모두 입력하면 마음 전하실 곳의 펼침 영역과 복사 버튼이 나타납니다. 비어 있는 동안에는 이 영역을 숨깁니다.
 
 ## 카카오톡 공유 버튼
 
-링크 복사는 바로 사용할 수 있습니다. 현재 **카카오톡 공유** 버튼은 스마트폰에서 기기의 공유 메뉴를 열어 카카오톡을 선택할 수 있게 합니다. 공유 메뉴를 지원하지 않는 브라우저에서는 링크를 복사합니다. 첨부하신 예시처럼 이미지 아래에 **「모바일 청첩장」·「오시는 길」 두 버튼**이 있는 카카오 전용 카드로 바로 보내려면 카카오 JavaScript 키가 필요합니다.
+링크 복사와 **카카오톡 공유** 버튼을 사용할 수 있습니다. 현재 배포 주소에는 청첩장 전용 Kakao Developers 앱(`Dongkyun & Tsukina Wedding`, 앱 ID `1584048`)을 연결했습니다. 카카오톡 공유 버튼은 대표 이미지와 **「모바일 청첩장」·「오시는 길」 두 버튼**이 있는 카카오 피드형 공유창을 엽니다. Kakao SDK를 사용할 수 없는 브라우저에서는 기기의 공유 메뉴 또는 링크 복사로 이어집니다.
 
-1. Kakao Developers에서 JavaScript 키를 발급받고 사용할 사이트 주소를 JavaScript SDK 도메인과 제품 링크 관리의 웹 도메인에 등록합니다.
-2. 프로젝트 루트에 `.env.local` 파일을 만들고 `NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY=발급받은키`를 적습니다.
-3. 개발 서버를 다시 시작합니다. Vercel에서는 같은 이름의 환경 변수를 프로젝트 설정에 추가한 뒤 다시 배포합니다.
+현재 Vercel Production 환경 변수 `NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY`와 카카오 앱의 JavaScript SDK 도메인·제품 링크 웹 도메인이 설정되어 있습니다. 로컬 개발 화면에서도 카카오 공유를 시험하려면 다음 순서로 설정합니다.
 
-키가 설정되면 카카오 기본 피드 템플릿에 앞서 만든 미리보기 이미지와 두 버튼을 사용합니다. 공유 문구와 버튼은 `src/components/ShareSection.tsx`, 링크 미리보기 제목·설명은 `src/app/layout.tsx`에서 바꿉니다. 실제 배포 주소에서 카카오톡 공유가 열리는지 확인하세요. 자체 도메인을 연결하면 카카오디벨로퍼스에도 새 도메인을 등록하고 Vercel의 `NEXT_PUBLIC_SITE_URL`을 바꿔 다시 배포하세요.
+1. Kakao Developers의 앱 `1584048`에서 JavaScript SDK 도메인에 로컬 주소를 추가합니다.
+2. 프로젝트 루트에 `.env.local` 파일을 만들고 `NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY=JavaScript키`를 적습니다. **어드민 키나 REST API 키를 사용하지 마세요.**
+3. 개발 서버를 다시 시작합니다.
+
+공유 문구와 버튼은 `src/components/ShareSection.tsx`, 링크 미리보기 제목·설명은 `src/app/layout.tsx`에서 바꿉니다. 자체 도메인을 연결하면 카카오 앱의 **JavaScript SDK 도메인**과 **제품 링크 관리 → 웹 도메인**에 새 주소를 모두 추가하고, Vercel의 `NEXT_PUBLIC_SITE_URL`을 바꿔 다시 배포하세요. 카카오 공유 버튼의 두 링크도 새 도메인에서 정상적으로 열리는지 확인하세요.
 
 ## 배경 음악(BGM) 바꾸기
 
