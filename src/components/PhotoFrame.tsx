@@ -21,7 +21,8 @@ export function PhotoFrame({ photo, alt, className = "", sizes = "(max-width: 48
           alt={alt}
           fill
           sizes={sizes}
-          preload={priority}
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
           quality={priority ? 90 : 85}
           style={{ objectPosition: position ?? "center center" }}
         />

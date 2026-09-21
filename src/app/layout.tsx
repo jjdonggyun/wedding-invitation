@@ -1,5 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Noto_Sans_JP, Noto_Sans_KR, Pinyon_Script } from "next/font/google";
+import {
+  Cormorant_Garamond,
+  Noto_Sans_JP,
+  Noto_Sans_KR,
+  Noto_Serif_JP,
+  Noto_Serif_KR,
+  Pinyon_Script,
+} from "next/font/google";
 import { weddingConfig } from "@/lib/wedding-config";
 import { getDateDisplay } from "@/lib/date";
 import "./globals.css";
@@ -7,6 +14,8 @@ import "./globals.css";
 const serif = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500", "600"], style: ["normal", "italic"], display: "swap", variable: "--font-serif" });
 const korean = Noto_Sans_KR({ subsets: ["latin"], weight: ["300", "400", "500", "600"], display: "swap", variable: "--font-korean" });
 const japanese = Noto_Sans_JP({ subsets: ["latin"], weight: ["300", "400", "500", "600"], display: "swap", variable: "--font-japanese" });
+const koreanSerif = Noto_Serif_KR({ subsets: ["latin"], weight: "variable", display: "swap", preload: false, variable: "--font-korean-serif" });
+const japaneseSerif = Noto_Serif_JP({ subsets: ["latin"], weight: "variable", display: "swap", preload: false, variable: "--font-japanese-serif" });
 const script = Pinyon_Script({ subsets: ["latin"], weight: "400", display: "swap", variable: "--font-script" });
 
 const vercelHost = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
@@ -27,5 +36,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#fffaf8" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ko"><body className={`${serif.variable} ${korean.variable} ${japanese.variable} ${script.variable}`}>{children}</body></html>;
+  return <html lang="ko"><body className={`${serif.variable} ${korean.variable} ${japanese.variable} ${koreanSerif.variable} ${japaneseSerif.variable} ${script.variable}`}>{children}</body></html>;
 }
