@@ -51,12 +51,24 @@ export function ShareSection({ t, language }: { t: WeddingCopy; language: Langua
     catch { showNotice(t.kakaoPending); }
   }
 
+  function shareLine() {
+    const url = new URL("/", window.location.origin).href;
+    const title = `${weddingConfig.groom[language]} ♥ ${weddingConfig.bride[language]}`;
+    const description = `${getDateDisplay(language).full} · ${weddingConfig.venue[language]}`;
+    const lineShareUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(url)}&text=${encodeURIComponent(`${title}\n${description}`)}`;
+    window.open(lineShareUrl, "_blank", "noopener,noreferrer");
+  }
+
   return (
     <section className="share-section section-pad">
       <p className="eyebrow">{t.shareEyebrow}</p>
       <h2>{t.shareTitle}</h2>
       <p>{t.shareBody}</p>
-      <div className="share-actions"><button type="button" onClick={copyLink}>{t.copyLink}<span aria-hidden="true">↗</span></button><button type="button" onClick={shareKakao}>{t.kakaoShare}<span aria-hidden="true">↗</span></button></div>
+      <div className="share-actions">
+        <button type="button" onClick={copyLink}>{t.copyLink}<span aria-hidden="true">↗</span></button>
+        <button type="button" className="share-kakao" onClick={shareKakao}>{t.kakaoShare}<span aria-hidden="true">↗</span></button>
+        <button type="button" className="share-line" onClick={shareLine}>{t.lineShare}<span aria-hidden="true">↗</span></button>
+      </div>
       <p className="share-notice" role="status">{notice || "\u00a0"}</p>
     </section>
   );
