@@ -25,7 +25,7 @@
 | 사진의 화면 배치 | `src/lib/image-config.ts` | `customImageOrder`, `storyPhotoCount`, `featuredGalleryNumbers` |
 | 카카오톡·링크 미리보기 사진 | `src/lib/image-config.ts` | `shareImageNumber` |
 
-결혼 날짜는 `2026-12-06T13:00:00+09:00`처럼 **연-월-일T시:분:초+09:00** 형식으로 작성합니다. `+09:00`은 한국 시간입니다. 날짜 표시와 D-Day는 이 값에서 자동으로 계산됩니다. 일본어 이름은 현재 가타카나로 적었습니다. 정확한 한자 표기를 확인한 뒤 `ja` 항목을 바꾸면 됩니다.
+결혼 날짜는 `2026-12-06T12:00:00+09:00`처럼 **연-월-일T시:분:초+09:00** 형식으로 작성합니다. `+09:00`은 한국 시간입니다. 날짜 표시와 D-Day는 이 값에서 자동으로 계산됩니다. 일본어 이름은 현재 가타카나로 적었습니다. 정확한 한자 표기를 확인한 뒤 `ja` 항목을 바꾸면 됩니다.
 
 ### 1. 사진 추가하기
 
@@ -95,4 +95,4 @@ LINE 공유는 LINE 공식 공유창을 열어 현재 언어의 이름·날짜·
 
 페이지는 빌드 때 정적으로 생성되며, `next/image`가 화면 크기에 맞춘 이미지를 제공합니다. 첫 사진은 우선 로딩되고 아래 사진은 필요할 때 로딩됩니다. 검색엔진 노출을 막기 위해 `noindex`, `nofollow` 메타 태그와 HTTP 헤더를 설정했습니다. `robots.txt`는 검색엔진이 이 지시를 읽을 수 있도록 접근을 허용합니다. 링크를 아는 사람은 방문할 수 있으므로 URL 자체를 비밀번호처럼 다루지는 마세요.
 
-장소 영역에는 별도 API 키나 과금 없이 OpenStreetMap 지도를 표시하고 호텔 위치에 마커를 보여줍니다. 지도 위치를 바꾸려면 `src/lib/wedding-config.ts`의 `venue.location.latitude`와 `venue.location.longitude`를 수정하세요. 지도 아래의 카카오맵·네이버지도 버튼 주소는 같은 파일의 `mapLinks`에서 관리합니다.
+장소 영역은 `지도 / 약도` 탭으로 구성되어 있습니다. 지도 이미지는 OpenStreetMap 자료를 사용하며 `node scripts/generate-venue-map.mjs`로 다시 만들 수 있고, 첨부 약도는 `public/venue-guide.png`에 있습니다. 지도 아래의 카카오맵·네이버지도 버튼 주소는 `src/lib/wedding-config.ts`의 `mapLinks`에서 관리합니다.

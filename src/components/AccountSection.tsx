@@ -18,6 +18,7 @@ export function AccountSection({ t }: { t: WeddingCopy }) {
   if (!sides.length) return null;
   return (
     <section className="account-section section-pad" id="account">
+      <p className="section-number" aria-hidden="true">07</p>
       <p className="eyebrow">{t.accountEyebrow}</p>
       <h2>{t.accountTitle}</h2>
       <p className="account-intro">{t.accountNote}</p>
@@ -26,7 +27,7 @@ export function AccountSection({ t }: { t: WeddingCopy }) {
           const expanded = open === key;
           return <div className="account-item" key={key}>
             <button type="button" aria-expanded={expanded} onClick={() => setOpen(expanded ? null : key)}><span>{label}</span><span className={`account-plus ${expanded ? "rotated" : ""}`}>+</span></button>
-            {expanded && <div className="account-content"><p>{account.bank} · {account.holder}</p><strong>{account.number}</strong><button type="button" className="text-action" onClick={() => copyAccount(account.number)}>{copied === account.number ? t.copied : t.copyAccount} ↗</button></div>}
+            {expanded && <div className="account-content"><p>{account.bank} · {account.holder}</p><strong>{account.number}</strong><button type="button" className="text-action" onClick={() => copyAccount(account.number)}>{copied === account.number ? t.copied : t.copyAccount}</button></div>}
           </div>;
         })}
       </div>

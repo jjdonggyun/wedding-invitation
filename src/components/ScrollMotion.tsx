@@ -9,7 +9,7 @@ const targets = [
   ".film-stage-overline", ".cinematic-landscape", ".cinematic-caption", ".closeup-wrap", ".cinematic-script",
   ".invitation-section .eyebrow", ".invitation-section h2", ".invitation-section > p:last-of-type", ".invitation-seal",
   ".gallery-section .eyebrow", ".gallery-section h2", ".gallery-description", ".gallery-tile",
-  ".venue-section .eyebrow", ".venue-section h2", ".venue-map", ".venue-details",
+  ".venue-section .eyebrow", ".venue-section h2", ".venue-details", ".venue-map-shell", ".venue-access",
   ".contact-section h2", ".contact-groups", ".account-section h2", ".account-list",
   ".share-section h2", ".share-actions", ".ending-photo-wrap", ".ending-content",
 ].join(",");

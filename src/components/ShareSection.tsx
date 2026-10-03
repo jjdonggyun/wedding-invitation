@@ -61,6 +61,7 @@ export function ShareSection({ t, language }: { t: WeddingCopy; language: Langua
 
   return (
     <section className="share-section section-pad">
+      <p className="section-number" aria-hidden="true">08</p>
       <p className="eyebrow">{t.shareEyebrow}</p>
       <h2>{t.shareTitle}</h2>
       <p>{t.shareBody}</p>

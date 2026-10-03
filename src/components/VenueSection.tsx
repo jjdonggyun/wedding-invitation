@@ -11,23 +11,26 @@ export function VenueSection({ t, language }: { t: WeddingCopy; language: Langua
   ];
   return (
     <section className="venue-section section-pad" id="venue">
+      <p className="section-number" aria-hidden="true">06</p>
       <p className="eyebrow">{t.venueEyebrow}</p>
       <h2>{t.venueTitle}</h2>
-      <VenueMap language={language} />
       <div className="venue-details">
-        <span className="venue-small">LOCATION</span>
+        <span className="venue-small">STANFORD HOTEL SEOUL</span>
         <h3>{weddingConfig.venue[language]}</h3>
+        <strong>{weddingConfig.venue[language === "ko" ? "hallKo" : "hallJa"]}</strong>
         <p>{weddingConfig.venue[language === "ko" ? "addressKo" : "addressJa"]}</p>
-        <div className="venue-detail-line" />
-        <span className="venue-small">DATE &amp; TIME</span>
-        <p className="venue-datetime">{getDateDisplay(language).full}</p>
+        <a className="venue-phone" href={`tel:${weddingConfig.venue.phone}`}>{weddingConfig.venue.phone}</a>
       </div>
-      <p className="venue-note">{t.venueNote}</p>
+      <VenueMap language={language} />
       {links.some(({ url }) => url) ? <div className="map-links">
         {links.filter(({ url }) => url).map(({ label, url }) => (
-          <a key={label} href={url} target="_blank" rel="noopener noreferrer">{label}<span aria-hidden="true">↗</span></a>
+          <a key={label} href={url} target="_blank" rel="noopener noreferrer"><span>{label}</span><i aria-hidden="true">↗</i></a>
         ))}
       </div> : <p className="map-pending">{t.mapNote}</p>}
+      <div className="venue-access">
+        <div><span>{language === "ko" ? "지하철" : "地下鉄"}</span><p>{language === "ko" ? "디지털미디어시티역에서 도보 약 10–15분" : "デジタルメディアシティ駅から徒歩約10〜15分"}</p></div>
+        <div><span>{language === "ko" ? "예식" : "挙式"}</span><p>{getDateDisplay(language).full}<br />{weddingConfig.venue[language === "ko" ? "hallKo" : "hallJa"]}</p></div>
+      </div>
     </section>
   );
 }

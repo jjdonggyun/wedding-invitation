@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#fffaf8" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#f8f6f2" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="ko"><body className={`${serif.variable} ${korean.variable} ${japanese.variable} ${koreanSerif.variable} ${japaneseSerif.variable} ${script.variable}`}>{children}</body></html>;
