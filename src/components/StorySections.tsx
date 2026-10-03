@@ -6,11 +6,9 @@ import { weddingConfig } from "@/lib/wedding-config";
 export function IntroSection({ t, photo }: { t: WeddingCopy; photo?: WeddingPhoto }) {
   return (
     <section className="intro-section section-pad" id="our-story">
-      <p className="section-number" aria-hidden="true">01</p>
       <div className="section-kicker">{t.ourWedding}</div>
       <h2 className="intro-title preline">{t.introTitle}</h2>
       <p className="intro-body preline">{t.introBody}</p>
-      <div className="intro-ornament" aria-hidden="true"><span />D · T<span /></div>
       <div className="editorial-photo-wrap">
         <PhotoFrame photo={photo} alt="커튼 사이에서 서로를 바라보는 두 사람" className="editorial-photo" placeholderLabel="PHOTO 02" />
         <span className="editorial-index">THE BEGINNING · 2026</span>
@@ -23,7 +21,6 @@ export function CoupleSection({ t, language, photo }: { t: WeddingCopy; language
   return (
     <section className="couple-section">
       <div className="couple-heading section-pad">
-        <p className="section-number" aria-hidden="true">02</p>
         <p className="serif-quote">{t.storyQuote}</p>
         <p className="quote-caption">{t.storyCaption}</p>
       </div>
@@ -47,7 +44,7 @@ export function CinematicPhotos({ t, landscape, closeup }: { t: WeddingCopy; lan
       <div className="film-stage">
         <p className="film-stage-overline">OUR MOMENTS <span>—</span> 2026</p>
         <PhotoFrame photo={landscape} alt="베일 아래 마주 선 두 사람" className="cinematic-landscape" placeholderLabel="PHOTO 04" />
-        <div className="cinematic-caption"><span>03</span><span>{t.together}</span></div>
+        <div className="cinematic-caption"><span>{t.together}</span></div>
       </div>
       <div className="closeup-wrap"><PhotoFrame photo={closeup} alt="꽃다발을 든 두 사람의 다정한 순간" className="cinematic-closeup" placeholderLabel="PHOTO 05" /></div>
       <p className="cinematic-script">Always, side by side.</p>
@@ -58,11 +55,9 @@ export function CinematicPhotos({ t, landscape, closeup }: { t: WeddingCopy; lan
 export function InvitationSection({ t }: { t: WeddingCopy }) {
   return (
     <section className="invitation-section section-pad">
-      <p className="section-number" aria-hidden="true">04</p>
       <p className="eyebrow">{t.invitationEyebrow}</p>
       <h2>{t.invitationTitle}</h2>
       <p className="preline">{t.invitationBody}</p>
-      <span className="invitation-seal" aria-hidden="true">D <em>&amp;</em> T</span>
     </section>
   );
 }

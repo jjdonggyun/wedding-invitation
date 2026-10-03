@@ -41,7 +41,7 @@ export function WeddingBook({ images }: { images: { hero?: WeddingPhoto; story: 
       <ContactSection t={t} language={language} />
       <AccountSection t={t} />
       <ShareSection t={t} language={language} />
-      <EndingSection t={t} language={language} photo={images.ending} />
+      <EndingSection t={t} photo={images.ending} />
     </main>
   );
 }

@@ -26,7 +26,6 @@ export function WeddingDateSection({ t, language }: { t: WeddingCopy; language: 
 
   return (
     <section className="date-section section-pad" id="date">
-      <p className="section-number" aria-hidden="true">03</p>
       <p className="eyebrow">{t.dateEyebrow}</p>
       <h2>{t.dateTitle}</h2>
       <div className="calendar-card" aria-label={date.full}>

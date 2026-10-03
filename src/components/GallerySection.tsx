@@ -27,7 +27,6 @@ export function GallerySection({ photos, t }: { photos: WeddingPhoto[]; t: Weddi
 
   return (
     <section className="gallery-section section-pad" id="gallery">
-      <p className="section-number" aria-hidden="true">05</p>
       <p className="eyebrow">{t.galleryEyebrow}</p>
       <h2>{t.galleryTitle}</h2>
       <p className="gallery-description">{t.galleryDesc}</p>

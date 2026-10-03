@@ -7,7 +7,7 @@ const targets = [
   ".serif-quote", ".quote-caption", ".couple-photo", ".couple-names",
   ".date-section .eyebrow", ".date-section h2", ".date-display", ".date-weekday", ".date-venue", ".date-count",
   ".film-stage-overline", ".cinematic-landscape", ".cinematic-caption", ".closeup-wrap", ".cinematic-script",
-  ".invitation-section .eyebrow", ".invitation-section h2", ".invitation-section > p:last-of-type", ".invitation-seal",
+  ".invitation-section .eyebrow", ".invitation-section h2", ".invitation-section > p:last-of-type",
   ".gallery-section .eyebrow", ".gallery-section h2", ".gallery-description", ".gallery-tile",
   ".venue-section .eyebrow", ".venue-section h2", ".venue-details", ".venue-map-shell", ".venue-access",
   ".contact-section h2", ".contact-groups", ".account-section h2", ".account-list",

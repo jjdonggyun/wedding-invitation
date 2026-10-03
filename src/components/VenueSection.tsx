@@ -11,7 +11,6 @@ export function VenueSection({ t, language }: { t: WeddingCopy; language: Langua
   ];
   return (
     <section className="venue-section section-pad" id="venue">
-      <p className="section-number" aria-hidden="true">06</p>
       <p className="eyebrow">{t.venueEyebrow}</p>
       <h2>{t.venueTitle}</h2>
       <div className="venue-details">

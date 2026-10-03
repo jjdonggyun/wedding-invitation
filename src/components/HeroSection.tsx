@@ -20,7 +20,6 @@ export function HeroSection({ photo, t, language, onLanguageChange }: { photo?: 
         </div>
         <div className="hero-photo-card">
           <PhotoFrame photo={photo} alt={`${weddingConfig.groom.ko}과 ${weddingConfig.bride.ko}의 웨딩 사진`} className="hero-photo" sizes="(max-width: 480px) 82vw, 390px" priority position="center 72%" placeholderLabel="OUR WEDDING DAY" />
-          <span className="hero-photo-mark" aria-hidden="true">D + T</span>
         </div>
         <div className="hero-date-lockup">
           <span className="hero-date-big">{String(date.month).padStart(2, "0")}.{String(date.day).padStart(2, "0")}</span>

@@ -18,7 +18,6 @@ export function AccountSection({ t }: { t: WeddingCopy }) {
   if (!sides.length) return null;
   return (
     <section className="account-section section-pad" id="account">
-      <p className="section-number" aria-hidden="true">07</p>
       <p className="eyebrow">{t.accountEyebrow}</p>
       <h2>{t.accountTitle}</h2>
       <p className="account-intro">{t.accountNote}</p>
