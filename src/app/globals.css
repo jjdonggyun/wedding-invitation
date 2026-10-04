@@ -54,9 +54,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid #8e5d48; outline-offs
 /* Cover */
 .hero {
   position: relative;
-  min-height: min(720px, 100svh);
-  height: min(920px, 100svh);
-  padding: 25px 28px 22px;
+  height: clamp(630px, 166.667vw, 800px);
+  padding: 16px 28px 14px;
   display: flex;
   flex-direction: column;
   background: var(--paper);
@@ -73,32 +72,32 @@ button:focus-visible, a:focus-visible { outline: 2px solid #8e5d48; outline-offs
 }
 .language-toggle button.active { color: var(--ink); }
 .language-toggle span { width: 1px; height: 10px; background: #c5beb6; }
-.hero-cover { position: relative; flex: 1; min-height: min(610px, calc(100svh - 143px)); }
+.hero-cover { position: relative; flex: 1; min-height: 0; }
 .hero-photo-card {
-  position: absolute; top: 84px; right: 14px; bottom: 123px; left: 14px;
+  position: absolute; top: 66px; right: 14px; bottom: 88px; left: 14px;
   padding: 8px; background: var(--white); box-shadow: 0 15px 35px rgba(36, 30, 25, .08);
 }
 .hero-photo { width: 100%; height: 100%; }
 .hero-photo img, .hero-photo:hover img { transform: scale(1.12); transform-origin: center bottom; transition: none; }
 .hero-heading {
-  position: absolute; z-index: 3; top: 108px; left: 36px; right: 36px; text-align: center;
+  position: absolute; z-index: 3; top: 90px; left: 36px; right: 36px; text-align: center;
 }
-.hero-heading > p { margin: 0 0 18px; font: 600 9px var(--font-serif), Georgia, serif; letter-spacing: .33em; }
+.hero-heading > p { margin: 0 0 12px; font: 600 9px var(--font-serif), Georgia, serif; letter-spacing: .33em; }
 .hero-heading h1 { margin: 0; font: 500 clamp(18px, 5.2vw, 24px)/1.05 var(--font-serif), Georgia, serif; letter-spacing: .08em; white-space: nowrap; }
 .hero-heading h1 span { display: inline; }
 .hero-heading h1 em { padding: 0 .5em; color: #a1705e; font-family: var(--font-script), cursive; font-size: 1.2em; font-weight: 400; }
 .hero-date-lockup {
-  position: absolute; left: 11px; right: 11px; bottom: 39px; display: grid;
+  position: absolute; left: 11px; right: 11px; bottom: 18px; display: grid;
   grid-template-columns: auto 1fr auto auto; align-items: end; gap: 10px;
   font: 600 10px/1 var(--font-serif), Georgia, serif; letter-spacing: .14em;
 }
 .hero-date-big { font: 400 clamp(49px, 14vw, 66px)/.72 var(--font-serif), Georgia, serif; letter-spacing: -.07em; }
 .hero-date-lockup i { height: 1px; width: 34px; margin-bottom: 2px; background: var(--ink); }
 .hero-script {
-  position: absolute; right: 10px; bottom: 78px; margin: 0;
+  position: absolute; right: 10px; bottom: 51px; margin: 0;
   color: #9d6c5c; font: 400 27px var(--font-script), cursive; transform: rotate(-5deg);
 }
-.hero-bottom { height: 42px; display: flex; justify-content: center; align-items: flex-end; }
+.hero-bottom { height: 32px; display: flex; justify-content: center; align-items: flex-end; }
 .scroll-cue { display: flex; align-items: center; gap: 12px; text-decoration: none; font: 600 9px var(--font-serif), Georgia, serif; letter-spacing: .2em; }
 .scroll-cue i { width: 34px; height: 1px; background: var(--ink); }
 
@@ -315,21 +314,10 @@ button:focus-visible, a:focus-visible { outline: 2px solid #8e5d48; outline-offs
   .venue-live-map { height: 355px; }
 }
 
-@media (max-height: 720px) {
-  .hero { padding-top: 16px; padding-bottom: 14px; }
-  .hero-cover { min-height: 0; }
-  .hero-photo-card { top: 66px; bottom: 88px; }
-  .hero-heading { top: 90px; }
-  .hero-heading > p { margin-bottom: 12px; }
-  .hero-date-lockup { bottom: 18px; }
-  .hero-script { bottom: 51px; }
-  .hero-bottom { height: 32px; }
-}
-
 @media (min-width: 481px) {
   body { padding: 34px 0; }
   .wedding-book { border: 1px solid rgba(255,255,255,.65); }
-  .hero { height: min(860px, 100svh); }
+  .hero { height: 800px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
