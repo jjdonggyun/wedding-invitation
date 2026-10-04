@@ -38,15 +38,17 @@ export function CoupleSection({ t, language, photo }: { t: WeddingCopy; language
   );
 }
 
-export function CinematicPhotos({ t, landscape, closeup }: { t: WeddingCopy; landscape?: WeddingPhoto; closeup?: WeddingPhoto }) {
+export function CinematicPhotos({ t, photos }: { t: WeddingCopy; photos: WeddingPhoto[] }) {
+  const [lead, ...closeups] = photos;
+  if (!lead) return null;
   return (
     <section className="cinematic-section" aria-label={t.together}>
       <div className="film-stage">
         <p className="film-stage-overline">OUR MOMENTS <span>—</span> 2026</p>
-        <PhotoFrame photo={landscape} alt="베일 아래 마주 선 두 사람" className="cinematic-landscape" placeholderLabel="PHOTO 04" />
+        <PhotoFrame photo={lead} alt="베일 아래 마주 선 두 사람" className="cinematic-landscape" />
         <div className="cinematic-caption"><span>{t.together}</span></div>
       </div>
-      <div className="closeup-wrap"><PhotoFrame photo={closeup} alt="꽃다발을 든 두 사람의 다정한 순간" className="cinematic-closeup" placeholderLabel="PHOTO 05" /></div>
+      {closeups.map((photo) => <div className="closeup-wrap" key={photo.id}><PhotoFrame photo={photo} alt="두 사람의 다정한 순간" className="cinematic-closeup" /></div>)}
       <p className="cinematic-script">Always, side by side.</p>
     </section>
   );

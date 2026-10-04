@@ -1,81 +1,156 @@
-// 자동 생성 파일입니다. 사진 순서는 src/lib/image-config.ts에서 조정하세요.
+// 자동 생성 파일입니다. images 폴더의 역할 기반 파일명에서 생성됩니다.
 export const discoveredImages = [
   {
-    "number": 1,
-    "src": "/images/1.jpg",
+    "id": "hero",
+    "role": "hero",
+    "order": 0,
+    "featured": false,
+    "src": "/images/hero.jpg",
+    "width": 3657,
+    "height": 5496
+  },
+  {
+    "id": "story-intro",
+    "role": "story",
+    "order": 0,
+    "featured": false,
+    "src": "/images/story-intro.jpg",
     "width": 4024,
     "height": 6048
   },
   {
-    "number": 2,
-    "src": "/images/2.jpg",
-    "width": 1536,
-    "height": 2322
+    "id": "story-couple",
+    "role": "story",
+    "order": 1,
+    "featured": false,
+    "src": "/images/story-couple.jpg",
+    "width": 2659,
+    "height": 4020
   },
   {
-    "number": 3,
-    "src": "/images/3.jpg",
-    "width": 1536,
-    "height": 2340
-  },
-  {
-    "number": 4,
-    "src": "/images/4.jpg",
+    "id": "story-cinematic-01",
+    "role": "story",
+    "order": 2,
+    "featured": false,
+    "src": "/images/story-cinematic-01.jpg",
     "width": 2308,
     "height": 1535
   },
   {
-    "number": 5,
-    "src": "/images/5.jpg",
+    "id": "gallery-01",
+    "role": "gallery",
+    "order": 1,
+    "featured": false,
+    "src": "/images/gallery-01.jpg",
     "width": 1536,
     "height": 2308
   },
   {
-    "number": 6,
-    "src": "/images/6.jpg",
+    "id": "gallery-02",
+    "role": "gallery",
+    "order": 2,
+    "featured": false,
+    "src": "/images/gallery-02.jpg",
+    "width": 4024,
+    "height": 6048
+  },
+  {
+    "id": "gallery-03-featured",
+    "role": "gallery",
+    "order": 3,
+    "featured": true,
+    "src": "/images/gallery-03-featured.jpg",
+    "width": 4024,
+    "height": 6048
+  },
+  {
+    "id": "gallery-04-featured",
+    "role": "gallery",
+    "order": 4,
+    "featured": true,
+    "src": "/images/gallery-04-featured.jpg",
     "width": 1536,
     "height": 2308
   },
   {
-    "number": 7,
-    "src": "/images/7.jpg",
-    "width": 1536,
-    "height": 2308
+    "id": "gallery-05",
+    "role": "gallery",
+    "order": 5,
+    "featured": false,
+    "src": "/images/gallery-05.jpg",
+    "width": 4024,
+    "height": 6048
   },
   {
-    "number": 8,
-    "src": "/images/8.jpg",
-    "width": 1536,
-    "height": 2308
+    "id": "gallery-06",
+    "role": "gallery",
+    "order": 6,
+    "featured": false,
+    "src": "/images/gallery-06.jpg",
+    "width": 4024,
+    "height": 6048
   },
   {
-    "number": 9,
-    "src": "/images/9.jpg",
-    "width": 1536,
-    "height": 2308
+    "id": "gallery-07-featured",
+    "role": "gallery",
+    "order": 7,
+    "featured": true,
+    "src": "/images/gallery-07-featured.jpg",
+    "width": 3365,
+    "height": 5300
   },
   {
-    "number": 10,
-    "src": "/images/10.jpg",
-    "width": 1536,
-    "height": 2308
+    "id": "gallery-08",
+    "role": "gallery",
+    "order": 8,
+    "featured": false,
+    "src": "/images/gallery-08.jpg",
+    "width": 4024,
+    "height": 6048
   },
   {
-    "number": 11,
-    "src": "/images/11.jpg",
-    "width": 1536,
-    "height": 2308
+    "id": "gallery-09",
+    "role": "gallery",
+    "order": 9,
+    "featured": false,
+    "src": "/images/gallery-09.jpg",
+    "width": 3901,
+    "height": 5863
   },
   {
-    "number": 12,
-    "src": "/images/12.jpg",
-    "width": 1536,
-    "height": 2308
+    "id": "gallery-10-featured",
+    "role": "gallery",
+    "order": 10,
+    "featured": true,
+    "src": "/images/gallery-10-featured.jpg",
+    "width": 4024,
+    "height": 6048
   },
   {
-    "number": 13,
-    "src": "/images/13.jpg",
-    "width": 1536,
-    "height": 2308
+    "id": "gallery-11-featured",
+    "role": "gallery",
+    "order": 11,
+    "featured": true,
+    "src": "/images/gallery-11-featured.jpg",
+    "width": 4024,
+    "height": 6048
+  },
+  {
+    "id": "ending",
+    "role": "ending",
+    "order": 0,
+    "featured": false,
+    "src": "/images/ending.jpg",
+    "width": 2707,
+    "height": 4096
+  },
+  {
+    "id": "share",
+    "role": "share",
+    "order": 0,
+    "featured": false,
+    "src": "/images/share.jpg",
+    "width": 3657,
+    "height": 5496
   }
 ] as const;

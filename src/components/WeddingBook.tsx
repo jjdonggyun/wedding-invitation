@@ -16,7 +16,14 @@ import { EndingSection } from "./EndingSection";
 import { MusicControl } from "./MusicControl";
 import { ScrollMotion } from "./ScrollMotion";
 
-export function WeddingBook({ images }: { images: { hero?: WeddingPhoto; story: WeddingPhoto[]; gallery: WeddingPhoto[]; ending?: WeddingPhoto } }) {
+type ImagePlan = {
+  hero?: WeddingPhoto;
+  story: { intro?: WeddingPhoto; couple?: WeddingPhoto; cinematic: WeddingPhoto[] };
+  gallery: WeddingPhoto[];
+  ending?: WeddingPhoto;
+};
+
+export function WeddingBook({ images }: { images: ImagePlan }) {
   const [language, setLanguage] = useState<Language>("ko");
   useEffect(() => {
     const stored = window.localStorage.getItem("wedding-language");
@@ -31,10 +38,10 @@ export function WeddingBook({ images }: { images: { hero?: WeddingPhoto; story: 
       <ScrollMotion />
       <MusicControl t={t} />
       <HeroSection photo={images.hero} t={t} language={language} onLanguageChange={changeLanguage} />
-      <IntroSection t={t} photo={images.story[0]} />
-      <CoupleSection t={t} language={language} photo={images.story[1]} />
+      <IntroSection t={t} photo={images.story.intro} />
+      <CoupleSection t={t} language={language} photo={images.story.couple} />
       <WeddingDateSection t={t} language={language} />
-      <CinematicPhotos t={t} landscape={images.story[2]} closeup={images.story[3]} />
+      <CinematicPhotos t={t} photos={images.story.cinematic} />
       <InvitationSection t={t} />
       <GallerySection photos={images.gallery} t={t} />
       <VenueSection t={t} language={language} />

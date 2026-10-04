@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { WeddingPhoto } from "@/lib/image-config";
-import { featuredGalleryNumbers, galleryMinimumTiles } from "@/lib/image-config";
+import { galleryMinimumTiles } from "@/lib/image-config";
 import type { WeddingCopy } from "@/lib/content";
 import { PhotoFrame } from "./PhotoFrame";
 
@@ -34,7 +34,7 @@ export function GallerySection({ photos, t }: { photos: WeddingPhoto[]; t: Weddi
         {slots.map((photo, index) => {
           const label = t.photo;
           const landscape = !!photo && photo.width / photo.height > 1.18;
-          const featured = !!photo && (landscape || featuredGalleryNumbers.includes(photo.number));
+          const featured = !!photo && (landscape || photo.featured);
           return photo ? (
             <button type="button" className={`gallery-tile gallery-tile-${index % 6}${featured ? " gallery-tile-wide" : ""}`} key={photo.src} aria-label={`${label} ${t.enlarge}`} onClick={() => setActive(index)}>
               <PhotoFrame photo={photo} alt={label} sizes={featured ? "(max-width: 480px) 92vw, 440px" : "(max-width: 480px) 45vw, 220px"} ratio={featured ? photo.width / photo.height : undefined} />
