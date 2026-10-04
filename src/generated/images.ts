@@ -6,8 +6,8 @@ export const discoveredImages = [
     "order": 0,
     "featured": false,
     "src": "/images/hero.jpg",
-    "width": 3657,
-    "height": 5496
+    "width": 3404,
+    "height": 4828
   },
   {
     "id": "story-intro",
@@ -150,7 +150,7 @@ export const discoveredImages = [
     "order": 0,
     "featured": false,
     "src": "/images/share.jpg",
-    "width": 3657,
-    "height": 5496
+    "width": 3404,
+    "height": 4828
   }
 ] as const;
