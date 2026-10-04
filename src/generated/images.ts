@@ -123,8 +123,8 @@ export const discoveredImages = [
     "order": 10,
     "featured": true,
     "src": "/images/gallery-10-featured.jpg",
-    "width": 4024,
-    "height": 6048
+    "width": 1023,
+    "height": 1537
   },
   {
     "id": "gallery-11-featured",
