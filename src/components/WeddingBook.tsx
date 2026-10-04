@@ -46,7 +46,7 @@ export function WeddingBook({ images }: { images: ImagePlan }) {
       <GallerySection photos={images.gallery} t={t} />
       <VenueSection t={t} language={language} />
       <ContactSection t={t} language={language} />
-      <AccountSection t={t} />
+      <AccountSection t={t} language={language} />
       <ShareSection t={t} language={language} />
       <EndingSection t={t} photo={images.ending} />
     </main>

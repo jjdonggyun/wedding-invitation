@@ -21,7 +21,7 @@ export function ShareSection({ t, language }: { t: WeddingCopy; language: Langua
     const kakao = (window as KakaoWindow).Kakao;
     const url = weddingConfig.siteUrl;
     const title = `${weddingConfig.groom[language]} ♥ ${weddingConfig.bride[language]}`;
-    const description = `${getDateDisplay(language).full} · ${weddingConfig.venue[language]}`;
+    const description = `${getDateDisplay(language).full}${language === "ko" ? " · " : "｜"}${weddingConfig.venue[language]}`;
     const shareImageUrl = new URL("/opengraph-image", url);
     shareImageUrl.searchParams.set("v", weddingConfig.shareImageRevision);
     if (key && kakao) {

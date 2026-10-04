@@ -3,10 +3,10 @@ export const weddingConfig = {
   siteUrl: "https://donggyun-tsuki.wedding/",
   shareImageRevision: "20261004-role-images",
   groom: { ko: "정동균", ja: "チョン・ドンギュン", en: "DONGGYUN" },
-  bride: { ko: "야마다 츠키나", ja: "ヤマダ・ツキナ", en: "TSUKINA" },
+  bride: { ko: "야마다 츠키나", ja: "ヤマダ ツキナ", en: "TSUKINA" },
   family: {
-    groomParents: { ko: "정준모 · 구남희", ja: "チョン・ジュンモ · ク・ナムヒ" },
-    brideParents: { ko: "야마다 리에", ja: "ヤマダ・リエ" },
+    groomParents: { ko: "정준모 · 구남희", ja: "チョン・ジュンモ　ク・ナムヒ" },
+    brideParents: { ko: "야마다 리에", ja: "ヤマダ リエ" },
     groomRelation: { ko: "장남", ja: "長男" },
     brideRelation: { ko: "차녀", ja: "次女" },
   },
@@ -17,7 +17,7 @@ export const weddingConfig = {
     hallKo: "2층 그랜드볼룸홀",
     hallJa: "2階 グランドボールルーム",
     addressKo: "서울 마포구 월드컵북로58길 15",
-    addressJa: "ソウル特別市 麻浦区 ワールドカップ北路58ギル 15",
+    addressJa: "ソウル特別市 麻浦区 ワールドカップ北路58キル 15",
     phone: "02-6016-0001",
     location: { latitude: 37.5823258, longitude: 126.8867101 },
   },
@@ -35,7 +35,7 @@ export const weddingConfig = {
     brideMother: "",
   },
   accounts: {
-    groom: { bank: "신한은행", number: "110-487-107195", holder: "정동균" },
-    bride: { bank: "", number: "", holder: "" },
+    groom: { bank: "신한은행", bankJa: "新韓銀行", number: "110-487-107195", holder: "정동균", holderJa: "チョン・ドンギュン" },
+    bride: { bank: "", bankJa: "", number: "", holder: "", holderJa: "" },
   },
 } as const;

@@ -54,7 +54,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #8e5d48; outline-offs
 /* Cover */
 .hero {
   position: relative;
-  min-height: 720px;
+  min-height: min(720px, 100svh);
   height: min(920px, 100svh);
   padding: 25px 28px 22px;
   display: flex;
@@ -73,12 +73,13 @@ button:focus-visible, a:focus-visible { outline: 2px solid #8e5d48; outline-offs
 }
 .language-toggle button.active { color: var(--ink); }
 .language-toggle span { width: 1px; height: 10px; background: #c5beb6; }
-.hero-cover { position: relative; flex: 1; min-height: 610px; }
+.hero-cover { position: relative; flex: 1; min-height: min(610px, calc(100svh - 143px)); }
 .hero-photo-card {
   position: absolute; top: 84px; right: 14px; bottom: 123px; left: 14px;
   padding: 8px; background: var(--white); box-shadow: 0 15px 35px rgba(36, 30, 25, .08);
 }
 .hero-photo { width: 100%; height: 100%; }
+.hero-photo img, .hero-photo:hover img { transform: none; transition: none; }
 .hero-heading {
   position: absolute; z-index: 3; top: 10px; left: 36px; right: 36px; text-align: center;
 }
@@ -314,10 +315,21 @@ button:focus-visible, a:focus-visible { outline: 2px solid #8e5d48; outline-offs
   .venue-live-map { height: 355px; }
 }
 
+@media (max-height: 720px) {
+  .hero { padding-top: 16px; padding-bottom: 14px; }
+  .hero-cover { min-height: 0; }
+  .hero-photo-card { top: 66px; bottom: 88px; }
+  .hero-heading { top: 4px; }
+  .hero-heading > p { margin-bottom: 12px; }
+  .hero-date-lockup { bottom: 18px; }
+  .hero-script { bottom: 51px; }
+  .hero-bottom { height: 32px; }
+}
+
 @media (min-width: 481px) {
   body { padding: 34px 0; }
   .wedding-book { border: 1px solid rgba(255,255,255,.65); }
-  .hero { height: 860px; }
+  .hero { height: min(860px, 100svh); }
 }
 
 @media (prefers-reduced-motion: reduce) {

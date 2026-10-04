@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import type { WeddingCopy } from "@/lib/content";
+import type { Language, WeddingCopy } from "@/lib/content";
 import { weddingConfig } from "@/lib/wedding-config";
 
-export function AccountSection({ t }: { t: WeddingCopy }) {
+export function AccountSection({ t, language }: { t: WeddingCopy; language: Language }) {
   const [open, setOpen] = useState<"groom" | "bride" | null>(null);
   const [copied, setCopied] = useState<string | null>(null);
   const sides = [
@@ -20,13 +20,13 @@ export function AccountSection({ t }: { t: WeddingCopy }) {
     <section className="account-section section-pad" id="account">
       <p className="eyebrow">{t.accountEyebrow}</p>
       <h2>{t.accountTitle}</h2>
-      <p className="account-intro">{t.accountNote}</p>
+      <p className="account-intro preline">{t.accountNote}</p>
       <div className="account-list">
         {sides.map(({ key, label, account }) => {
           const expanded = open === key;
           return <div className="account-item" key={key}>
             <button type="button" aria-expanded={expanded} onClick={() => setOpen(expanded ? null : key)}><span>{label}</span><span className={`account-plus ${expanded ? "rotated" : ""}`}>+</span></button>
-            {expanded && <div className="account-content"><p>{account.bank} · {account.holder}</p><strong>{account.number}</strong><button type="button" className="text-action" onClick={() => copyAccount(account.number)}>{copied === account.number ? t.copied : t.copyAccount}</button></div>}
+            {expanded && <div className="account-content"><p>{language === "ko" ? account.bank : account.bankJa} · {language === "ko" ? account.holder : account.holderJa}</p><strong>{account.number}</strong><button type="button" className="text-action" onClick={() => copyAccount(account.number)}>{copied === account.number ? t.copied : t.copyAccount}</button></div>}
           </div>;
         })}
       </div>
