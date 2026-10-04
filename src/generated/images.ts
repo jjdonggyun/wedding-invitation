@@ -135,10 +135,10 @@ export const discoveredImages = [
     "role": "gallery",
     "order": 10,
     "featured": true,
-    "src": "/images/gallery-10-featured.8c6df200e295.jpg",
-    "version": "8c6df200e295",
-    "width": 1023,
-    "height": 1537
+    "src": "/images/gallery-10-featured.fe8eac463308.jpg",
+    "version": "fe8eac463308",
+    "width": 4024,
+    "height": 6048
   },
   {
     "id": "gallery-11-featured",
