@@ -6,7 +6,7 @@ import { getSharePhoto } from "@/lib/image-config";
 import { weddingConfig } from "@/lib/wedding-config";
 import { getDateDisplay } from "@/lib/date";
 
-export const alt = "정동균과 야마다 츠키나의 웨딩 초대장";
+export const alt = "정동균과 야마다 츠키나의 웨딩 초대장 공유 미리보기";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
