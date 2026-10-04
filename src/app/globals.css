@@ -75,12 +75,12 @@ button:focus-visible, a:focus-visible { outline: 2px solid #8e5d48; outline-offs
 .language-toggle span { width: 1px; height: 10px; background: #c5beb6; }
 .hero-cover { position: relative; flex: 1; min-height: 610px; }
 .hero-photo-card {
-  position: absolute; top: 72px; right: 14px; bottom: 123px; left: 14px;
+  position: absolute; top: 84px; right: 14px; bottom: 123px; left: 14px;
   padding: 8px; background: var(--white); box-shadow: 0 15px 35px rgba(36, 30, 25, .08);
 }
 .hero-photo { width: 100%; height: 100%; }
 .hero-heading {
-  position: absolute; z-index: 3; top: 101px; left: 36px; right: 36px; text-align: center;
+  position: absolute; z-index: 3; top: 10px; left: 36px; right: 36px; text-align: center;
 }
 .hero-heading > p { margin: 0 0 18px; font: 600 9px var(--font-serif), Georgia, serif; letter-spacing: .33em; }
 .hero-heading h1 { margin: 0; font: 500 clamp(18px, 5.2vw, 24px)/1.05 var(--font-serif), Georgia, serif; letter-spacing: .08em; white-space: nowrap; }
