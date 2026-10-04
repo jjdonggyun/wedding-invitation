@@ -62,9 +62,9 @@
 
 ## 링크·카카오톡·LINE 공유
 
-링크 복사, **카카오톡 공유**, **LINE 공유** 버튼을 사용할 수 있습니다. 현재 배포 주소에는 청첩장 전용 Kakao Developers 앱(`Dongkyun & Tsukina Wedding`, 앱 ID `1584048`)을 연결했습니다. 카카오톡 공유 버튼은 대표 이미지와 **「모바일 청첩장」·「위치 보기」 두 버튼**이 있는 카카오 피드형 공유창을 엽니다. Kakao SDK를 사용할 수 없는 브라우저에서는 기기의 공유 메뉴 또는 링크 복사로 이어집니다. 카카오톡 채팅창에 URL을 직접 붙여넣으면 카카오가 일반 링크 미리보기를 만들기 때문에 URL이 노출되고 버튼은 표시되지 않습니다.
+링크 복사, **카카오톡 공유**, **LINE 공유** 버튼을 사용할 수 있습니다. 현재 배포 주소에는 청첩장 전용 Kakao Developers 앱(`Donggyun`, 앱 ID `1584048`)을 연결했습니다. 카카오톡 공유 버튼은 대표 이미지와 **「모바일 청첩장」·「위치 보기」 두 버튼**이 있는 카카오 피드형 공유창을 엽니다. Kakao SDK를 사용할 수 없는 브라우저에서는 기기의 공유 메뉴 또는 링크 복사로 이어집니다. 카카오톡 채팅창에 URL을 직접 붙여넣으면 카카오가 일반 링크 미리보기를 만들기 때문에 URL이 노출되고 버튼은 표시되지 않습니다.
 
-LINE 공유는 LINE 공식 공유창을 열어 현재 언어의 이름·날짜·장소와 청첩장 URL을 전송합니다. LINE 미리보기는 `src/app/layout.tsx`의 Open Graph 제목·설명과 `src/app/opengraph-image.tsx`의 대표 이미지를 사용합니다. LINE 일반 공유에서는 카카오 피드처럼 카드 안에 두 개의 맞춤 버튼을 넣을 수 없으며, 카드 또는 URL을 누르면 청첩장으로 이동합니다.
+LINE 공유는 LINE 공식 공유창을 열어 공식 도메인의 청첩장 URL을 전송합니다. LINE이 `src/app/layout.tsx`의 Open Graph 제목·설명과 `src/app/opengraph-image.tsx`의 대표 이미지를 읽어 카드 미리보기를 만듭니다. LINE 일반 공유에서는 카카오 피드처럼 카드 안에 두 개의 맞춤 버튼을 넣을 수 없으며, 카드 또는 URL을 누르면 청첩장으로 이동합니다.
 
 현재 Vercel Production 환경 변수 `NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY`와 카카오 앱의 JavaScript SDK 도메인·제품 링크 웹 도메인이 설정되어 있습니다. 로컬 개발 화면에서도 카카오 공유를 시험하려면 다음 순서로 설정합니다.
 
@@ -72,7 +72,7 @@ LINE 공유는 LINE 공식 공유창을 열어 현재 언어의 이름·날짜·
 2. 프로젝트 루트에 `.env.local` 파일을 만들고 `NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY=JavaScript키`를 적습니다. **어드민 키나 REST API 키를 사용하지 마세요.**
 3. 개발 서버를 다시 시작합니다.
 
-공유 문구와 버튼은 `src/components/ShareSection.tsx`, 링크 미리보기 제목·설명은 `src/app/layout.tsx`에서 바꿉니다. 자체 도메인을 연결하면 카카오 앱의 **JavaScript SDK 도메인**과 **제품 링크 관리 → 웹 도메인**에 새 주소를 모두 추가하고, Vercel의 `NEXT_PUBLIC_SITE_URL`을 바꿔 다시 배포하세요. 카카오 공유 버튼의 두 링크도 새 도메인에서 정상적으로 열리는지 확인하세요.
+공유 문구와 버튼은 `src/components/ShareSection.tsx`, 공식 도메인은 `src/lib/wedding-config.ts`, 링크 미리보기 제목·설명은 `src/app/layout.tsx`에서 바꿉니다. 자체 도메인을 바꾸면 카카오 앱의 **JavaScript SDK 도메인**과 **제품 링크 관리 → 웹 도메인**에 새 주소를 모두 추가한 뒤 다시 배포하세요. 카카오 공유 버튼의 두 링크도 새 도메인에서 정상적으로 열리는지 확인하세요.
 
 ## 배경 음악(BGM) 바꾸기
 
