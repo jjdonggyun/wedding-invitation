@@ -1,4 +1,5 @@
-import { copyFile, mkdir, readdir, stat, unlink, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { copyFile, mkdir, readFile, readdir, stat, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
@@ -55,19 +56,27 @@ for (const photo of candidates) {
   usedSlots.add(slot);
 }
 
-const activeNames = new Set(candidates.map(({ name }) => name));
+for (const photo of candidates) {
+  const buffer = await readFile(path.join(source, photo.name));
+  const version = createHash("sha256").update(buffer).digest("hex").slice(0, 12);
+  const parsedPath = path.parse(photo.name);
+  photo.version = version;
+  photo.destinationName = `${parsedPath.name}.${version}${parsedPath.ext.toLowerCase()}`;
+}
+
+const activeNames = new Set(candidates.map(({ destinationName }) => destinationName));
 const destinationNames = (await readdir(destination)).filter((name) => imageExtension.test(name));
 await Promise.all(destinationNames.filter((name) => !activeNames.has(name)).map((name) => unlink(path.join(destination, name))));
 
 const photos = [];
-for (const { name, id, role, order, featured } of candidates) {
+for (const { name, destinationName, version, id, role, order, featured } of candidates) {
   const from = path.join(source, name);
-  const to = path.join(destination, name);
+  const to = path.join(destination, destinationName);
   const [fromStat, toStat] = await Promise.all([stat(from), stat(to).catch(() => null)]);
   if (!toStat || fromStat.size !== toStat.size || fromStat.mtimeMs > toStat.mtimeMs) await copyFile(from, to);
   const { width, height } = await sharp(from).metadata();
   if (!width || !height) throw new Error(`${name}의 크기를 읽을 수 없습니다.`);
-  photos.push({ id, role, order, featured, src: `/images/${name}`, width, height });
+  photos.push({ id, role, order, featured, src: `/images/${destinationName}`, version, width, height });
 }
 
 await writeFile(

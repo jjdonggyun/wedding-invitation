@@ -6,6 +6,7 @@ export type WeddingPhoto = {
   order: number;
   featured: boolean;
   src: string;
+  version: string;
   width: number;
   height: number;
 };

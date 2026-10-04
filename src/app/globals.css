@@ -81,7 +81,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #8e5d48; outline-offs
 .hero-photo { width: 100%; height: 100%; }
 .hero-photo img, .hero-photo:hover img { transform: none; transition: none; }
 .hero-heading {
-  position: absolute; z-index: 3; top: 10px; left: 36px; right: 36px; text-align: center;
+  position: absolute; z-index: 3; top: 108px; left: 36px; right: 36px; text-align: center;
 }
 .hero-heading > p { margin: 0 0 18px; font: 600 9px var(--font-serif), Georgia, serif; letter-spacing: .33em; }
 .hero-heading h1 { margin: 0; font: 500 clamp(18px, 5.2vw, 24px)/1.05 var(--font-serif), Georgia, serif; letter-spacing: .08em; white-space: nowrap; }
@@ -319,7 +319,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #8e5d48; outline-offs
   .hero { padding-top: 16px; padding-bottom: 14px; }
   .hero-cover { min-height: 0; }
   .hero-photo-card { top: 66px; bottom: 88px; }
-  .hero-heading { top: 4px; }
+  .hero-heading { top: 90px; }
   .hero-heading > p { margin-bottom: 12px; }
   .hero-date-lockup { bottom: 18px; }
   .hero-script { bottom: 51px; }
