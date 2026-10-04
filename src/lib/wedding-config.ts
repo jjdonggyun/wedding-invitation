@@ -8,7 +8,7 @@ export const weddingConfig = {
     groomParents: { ko: "정준모 · 구남희", ja: "チョン・ジュンモ　ク・ナムヒ" },
     brideParents: { ko: "야마다 리에", ja: "ヤマダ リエ" },
     groomRelation: { ko: "장남", ja: "長男" },
-    brideRelation: { ko: "차녀", ja: "次女" },
+    brideRelation: { ko: "장녀", ja: "長女" },
   },
   weddingDate: "2026-12-06T12:00:00+09:00",
   venue: {

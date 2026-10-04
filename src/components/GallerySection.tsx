@@ -29,7 +29,7 @@ export function GallerySection({ photos, t }: { photos: WeddingPhoto[]; t: Weddi
     <section className="gallery-section section-pad" id="gallery">
       <p className="eyebrow">{t.galleryEyebrow}</p>
       <h2>{t.galleryTitle}</h2>
-      <p className="gallery-description">{t.galleryDesc}</p>
+      <p className="gallery-description"></p>
       <div className="gallery-grid">
         {slots.map((photo, index) => {
           const label = t.photo;

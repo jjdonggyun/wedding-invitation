@@ -23,7 +23,7 @@ export function getDateDisplay(lang: Language) {
   const time = lang === "ko"
     ? `${period} ${hour12}시${minute ? ` ${minute}분` : ""}`
     : hour24 === 12 && minute === 0
-      ? "正午"
+      ? "12:00"
       : `${hour24 < 12 ? "午前" : "午後"}${hour12}時${minute ? `${minute}分` : ""}`;
   const full = lang === "ko"
     ? `${year}년 ${month}월 ${day}일 ${weekday} · ${time}`
