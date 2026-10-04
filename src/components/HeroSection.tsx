@@ -19,7 +19,7 @@ export function HeroSection({ photo, t, language, onLanguageChange }: { photo?: 
           <h1><span>{weddingConfig.groom.en}</span><em>&amp;</em><span>{weddingConfig.bride.en}</span></h1>
         </div>
         <div className="hero-photo-card">
-          <PhotoFrame photo={photo} alt={t.heroPhotoAlt} className="hero-photo" sizes="(max-width: 480px) 82vw, 390px" priority position="center top" placeholderLabel="OUR WEDDING DAY" />
+          <PhotoFrame photo={photo} alt={t.heroPhotoAlt} className="hero-photo" sizes="(max-width: 480px) 100vw, 480px" priority position="center bottom" placeholderLabel="OUR WEDDING DAY" />
         </div>
         <div className="hero-date-lockup">
           <span className="hero-date-big">{String(date.month).padStart(2, "0")}.{String(date.day).padStart(2, "0")}</span>
