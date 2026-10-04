@@ -78,8 +78,8 @@ export const discoveredImages = [
     "order": 5,
     "featured": false,
     "src": "/images/gallery-05.jpg",
-    "width": 4024,
-    "height": 6048
+    "width": 1023,
+    "height": 1537
   },
   {
     "id": "gallery-06",
@@ -87,8 +87,8 @@ export const discoveredImages = [
     "order": 6,
     "featured": false,
     "src": "/images/gallery-06.jpg",
-    "width": 4024,
-    "height": 6048
+    "width": 1023,
+    "height": 1538
   },
   {
     "id": "gallery-07-featured",
