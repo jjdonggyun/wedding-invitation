@@ -19,9 +19,8 @@ export function getDateDisplay(lang: Language) {
   const hour24 = Number(timeParts.find((part) => part.type === "hour")?.value ?? 13);
   const minute = Number(timeParts.find((part) => part.type === "minute")?.value ?? 0);
   const hour12 = hour24 % 12 || 12;
-  const period = hour24 === 12 ? "낮" : hour24 < 12 ? "오전" : "오후";
   const time = lang === "ko"
-    ? `${period} ${hour12}시${minute ? ` ${minute}분` : ""}`
+    ? `${String(hour24).padStart(2, "0")}:${String(minute).padStart(2, "0")}`
     : hour24 === 12 && minute === 0
       ? "12:00"
       : `${hour24 < 12 ? "午前" : "午後"}${hour12}時${minute ? `${minute}分` : ""}`;
