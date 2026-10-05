@@ -241,10 +241,10 @@ button:focus-visible, a:focus-visible { outline: 2px solid #8e5d48; outline-offs
 .venue-map-open span { margin-left: 9px; color: #9a6652; }
 .venue-guide-map { position: relative; width: 100%; aspect-ratio: 400 / 629; background: var(--paper); }
 .venue-guide-map img { object-fit: contain; }
-.map-links { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 12px; border: 1px solid var(--line); }
-.map-links a { min-height: 50px; padding: 0 14px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; font-size: 13px; }
+.map-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 12px; border: 1px solid var(--line); }
+.map-links a { min-width: 0; min-height: 50px; padding: 0 10px; display: flex; gap: 4px; align-items: center; justify-content: space-between; text-decoration: none; font-size: 12px; white-space: nowrap; }
 .map-links a + a { border-left: 1px solid var(--line); }
-.map-links i { color: #9d6651; font-style: normal; }
+.map-links i { flex: none; color: #9d6651; font-style: normal; }
 .venue-access { margin-top: 31px; border-top: 1px solid var(--line); }
 .venue-access > div { display: grid; grid-template-columns: 62px 1fr; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: start; }
 .venue-access span { color: #8e6252; font-family: var(--font-korean-serif), serif; font-size: 13px; }
@@ -326,6 +326,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #8e5d48; outline-offs
 
 @media (max-width: 380px) {
   .section-pad { padding-left: 27px; padding-right: 27px; }
+  .map-links a { padding: 0 7px; font-size: 11px; }
   .hero-heading { left: 24px; right: 24px; }
   .hero-heading h1 { font-size: 18px; letter-spacing: .06em; }
   .hero-date-lockup { grid-template-columns: auto 1fr auto; }

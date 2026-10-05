@@ -23,7 +23,12 @@ export function VenueSection({ t, language }: { t: WeddingCopy; language: Langua
       <VenueMap language={language} />
       {links.some(({ url }) => url) ? <div className="map-links">
         {links.filter(({ url }) => url).map(({ label, url }) => (
-          <a key={label} href={url} target="_blank" rel="noopener noreferrer"><span>{label}</span><i aria-hidden="true">↗</i></a>
+          <a
+            key={label}
+            href={url}
+            target={url.startsWith("https://") ? "_blank" : undefined}
+            rel={url.startsWith("https://") ? "noopener noreferrer" : undefined}
+          ><span>{label}</span><i aria-hidden="true">↗</i></a>
         ))}
       </div> : <p className="map-pending">{t.mapNote}</p>}
       <div className="venue-access">

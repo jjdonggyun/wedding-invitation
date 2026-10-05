@@ -24,7 +24,7 @@ export const weddingConfig = {
   mapLinks: {
     kakao: "https://map.kakao.com/link/map/%EC%8A%A4%ED%83%A0%ED%8F%AC%EB%93%9C%ED%98%B8%ED%85%94%EC%84%9C%EC%9A%B8,37.5823258,126.8867101",
     naver: "https://map.naver.com/p/search/%EC%8A%A4%ED%83%A0%ED%8F%AC%EB%93%9C%ED%98%B8%ED%85%94%EC%84%9C%EC%9A%B8",
-    tmap: "",
+    tmap: `tmap://route?goalname=${encodeURIComponent("스탠포드호텔서울")}&goalx=126.8867101&goaly=37.5823258`,
   },
   contacts: {
     groom: "",
